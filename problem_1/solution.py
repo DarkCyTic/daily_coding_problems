@@ -1,16 +1,20 @@
+def remove_bigger_numbers(k, numbers):
+    for num in numbers:
+        if num > k:
+            numbers.remove(num)
+
+    return numbers
+
+
 def solve(k, numbers):
+    numbers = remove_bigger_numbers(k, numbers)
+
     result = False
 
     for num in numbers:
-        numbers.remove(num)
-
-        for number in numbers:
-            if(number == k - num):
-                numbers.remove(number)
-                result = True
-                break
-
-        if result:
+        complement = k - num
+        if complement in numbers:
+            result = True
             break
 
     return result
