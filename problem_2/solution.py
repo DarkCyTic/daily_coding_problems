@@ -1,13 +1,10 @@
 def solve(integers):
-    result = []
     product = 1
-
+    
     for integer in integers:
         product *= integer
 
-    for integer in integers:
-        current_product = int(product / integer)
-        result.append(current_product)
+    result = [ int(product / integer) for integer in integers ]
     
     return result
 
