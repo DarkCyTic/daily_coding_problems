@@ -21,10 +21,8 @@ def solve(k, numbers):
 
         if sum < k:
             i += 1
-            continue
-        else if sum > k
-            j += 1
-            continue
+        elif sum > k:
+            j -= 1
         else:
             return True
     
