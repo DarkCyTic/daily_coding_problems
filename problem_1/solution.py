@@ -1,14 +1,4 @@
-def remove_bigger_numbers(k, numbers):
-    for num in numbers:
-        if num > k:
-            numbers.remove(num)
-
-    return numbers
-
-
 def solve(k, numbers):
-    numbers = remove_bigger_numbers(k, numbers)
-
     result = False
 
     for num in numbers:
