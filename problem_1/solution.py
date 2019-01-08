@@ -1,22 +1,23 @@
+def remove_bigger_numbers(k, numbers):
+    for num in numbers:
+        if num > k:
+            numbers.remove(num)
+
+    return numbers
+
+
 def solve(k, numbers):
-    # Sort the list
-    numbers.sort()
+    numbers = remove_bigger_numbers(k, numbers)
 
-    # Variables marking the first and last index of the list
-    i = 0
-    j = len(numbers) - 1
+    result = False
 
-    while i < j:
-        sum = numbers[i] + numbers[j]
+    for num in numbers:
+        complement = k - num
+        if complement in numbers:
+            result = True
+            break
 
-        if sum < k:
-            i += 1
-        elif sum > k:
-            j -= 1
-        else:
-            return True
-    
-    return False
+    return result
 
 
 if __name__ == "__main__":
